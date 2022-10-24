@@ -1,29 +1,32 @@
 ﻿{
-  "manifest_version": 3,
-  "name": "PersonalisedNewTab Extension",
-  "description": "My browser extension built with Blazor WebAssembly",
-  "version": "0.1",
-  "background": {
-    "service_worker": "BackgroundWorker.js",
-    "type": "module"
-  },
-  "action": {
-    "default_popup": "popup.html"
-  },
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
-  },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "framework/*",
-        "content/*"
-      ],
-      "matches": [ "<all_urls>" ]
-    }
-  ]
+    "manifest_version": 3,
+    "name": "Focus Tab",
+    "description": "A new tab that reminds you about what you're working on'",
+    "version": "0.1",
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+    "background": {
+        "service_worker": "BackgroundWorker.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "framework/*",
+                "content/*"
+            ],
+            "matches": [ "<all_urls>" ]
+        }
+    ]
 }
